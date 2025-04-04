@@ -13,7 +13,7 @@ git config --list                               # Show Git configuration
 
 📁 Repository Setup
 -------------------
-git init                                         # Create a new Git repo in current folder
+git init                                        # Create a new Git repo in current folder
 git clone <repo-url>                            # Clone remote repo to local
 
 
