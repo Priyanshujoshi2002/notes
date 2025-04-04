@@ -6,71 +6,86 @@ GIT COMMANDS CHEAT SHEET
 
 🔧 Basic Git Configuration
 --------------------------
-git config --global user.name "Your Name"       # Set your Git username
-git config --global user.email "you@example.com" # Set your Git email
-git config --list                               # Show Git configuration
+git config --global user.name "Your Name"                                # Set your Git username
+git config --global user.email "you@example.com"                         # Set your Git email
+git config --list                                                        # Show Git configuration
 
 
 📁 Repository Setup
 -------------------
-git init                                        # Create a new Git repo in current folder
-git clone <repo-url>                            # Clone remote repo to local
+git init                                                                 # Create a new Git repo in current folder
+git clone <repo-url>                                                     # Clone remote repo to local
 
 
 📄 Staging & Committing
 ------------------------
-git status                                      # Show status of files (staged/unstaged)
-git add <file>                                  # Add specific file to staging
-git add .                                       # Add all changes to staging
-git commit -m "message"                         # Commit staged changes with message
-git commit -am "msg"                            # Add & commit tracked files in one step
+git status                                                               # Show status of files (staged/unstaged)
+git add <file>                                                           # Add specific file to staging
+git add .                                                                # Add all changes to staging
+git commit -m "message"                                                  # Commit staged changes with message
+git commit -am "msg"                                                     # Add & commit tracked files in one step
 
 
 🔄 Branching
 -------------
-git branch                                      # List branches
-git branch <name>                               # Create a new branch
-git checkout <name>                             # Switch to a branch
-git checkout -b <name>                          # Create & switch to new branch
-git merge <branch>                              # Merge branch into current branch
-git branch -d <name>                            # Delete branch
+git branch                                                               # List branches
+git branch <name>                                                        # Create a new branch
+git checkout <name>                                                      # Switch to a branch
+git checkout -b <name>                                                   # Create & switch to new branch
+git merge <branch>                                                       # Merge branch into current branch
+git branch -d <name>                                                     # Delete branch
 
 
 🌐 Remote Repositories
 -----------------------
-git remote -v                                   # List remotes
-git remote add origin <url>                     # Add remote repo
-git push -u origin main                         # Push main branch to origin
-git push                                        # Push changes to remote
-git pull                                        # Fetch and merge from remote
-git fetch                                       # Fetch changes but don’t merge
+git remote -v                                                            # List remotes
+git remote add origin <url>                                              # Add remote repo
+git push -u origin main                                                  # Push main branch to origin
+git push                                                                 # Push changes to remote
+git pull                                                                 # Fetch and merge from remote
+git fetch                                                                # Fetch changes but don’t merge
 
 
 🧠 Undo Changes
 ----------------
-git reset <file>                                # Unstage a file
-git reset --hard                                # Reset all changes (dangerous)
-git checkout -- <file>                          # Discard changes in a file
-git revert <commit>                             # Create new commit to undo a previous one
+git reset <file>                                                         # Unstage a file
+git reset --soft HEAD~1                                                  # Undo last commit, keep files staged
+git reset --hard HEAD~1	                                                 # Deletes last commit + all changes
+git reset --hard	                                                     # Keeps current commit, discards uncommitted changes
+
+git checkout -- <file>                                                   # Discard changes in a file
+git checkout <commit-id> -- <filename>                                   # Replaces your current working version of <filename> with the version from <commit-id>. 
+                                                                           & Doesn’t change your branch or history — just the file content.
+git checkout [master/branch] -- <fileName>                               # Come back to latest commited files
+
+git revert <commit-id>                                                   # Create new commit to undo a previous one
+
+git restore <file or .>	                                                 # Undo changes in working dir
+git restore --staged <file or .>	                                     # Unstage the file
+git restore --source=branch <file>	                                     # Restore file from another branch
+git restore --worktree <file or .>	                                     # revert the staging area changes to current files
+git restore --source=HEAD --staged --worktree <file>	                 # Fully reset file to last commit
+
 
 
 📜 Log & History
 -----------------
-git log                                         # Show commit history
-git log --oneline                               # Show one-line summary of commits
-git diff                                        # Show unstaged changes
-git show <commit>                               # Show details of a specific commit
+git log                                                                  # Show commit history
+git log --oneline                                                        # Show one-line summary of commits
+git diff                                                                 # Show unstaged changes
+git show <commit>                                                        # Show details of a specific commit
+git show <commit>:filename                                               # Show details of a specific commit with file name
 
 
 📦 Tagging
 ----------
-git tag                                         # List all tags
-git tag <name>                                  # Create a tag
-git tag -d <name>                               # Delete a tag
-git push origin <tag>                           # Push a tag to remote
+git tag                                                                  # List all tags
+git tag <name>                                                           # Create a tag
+git tag -d <name>                                                        # Delete a tag
+git push origin <tag>                                                    # Push a tag to remote
 
 
 🧹 Clean Up
 ------------
-git clean -n                                    # Show untracked files to be removed
-git clean -f                                    # Remove untracked files
+git clean -n                                                             # Show untracked files to be removed
+git clean -f                                                             # Remove untracked files
