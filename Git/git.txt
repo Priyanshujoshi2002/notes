@@ -72,6 +72,17 @@ git restore --source=HEAD --staged --worktree <file>	                 # Fully re
 -----------------
 git log                                                                  # Show commit history
 git log --oneline                                                        # Show one-line summary of commits
+git log -S '<string>'                                                    # Search commit history where string was added/removed
+
+git log --grep="keyword"  or git log --grep "keyword"                    # Search commit messages for a keyword
+git log --grep="fix bug" -i                                              # Case-insensitive search in messages
+git log --grep="login" --oneline                                         # Clean one-line format
+
+git log --since="YYYY-MM-DD"                                             # Show commits after a specific date
+git log --until="YYYY-MM-DD"                                             # Show commits before a specific date
+git log --author="Name"                                                  # Filter commits by author
+git log --author="Name" --since="..." --until="..."                      # Combine filters
+
 git diff                                                                 # Show unstaged changes
 git show <commit>                                                        # Show details of a specific commit
 git show <commit>:filename                                               # Show details of a specific commit with file name
