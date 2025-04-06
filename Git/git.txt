@@ -48,15 +48,17 @@ git fetch                                                                # Fetch
 
 🧠 Undo Changes
 ----------------
+git checkout -- <file>                                                   # Discard changes in a file
+git checkout <commit-id> -- <filename>                                   # Replaces your current working version of <filename> with the version from <commit-id>. 
+                                                                           & Doesn’t change your branch or history — just the file content.
+git checkout <branch> -- <file>                                          # Restore specific file from another branch
+
 git reset <file>                                                         # Unstage a file
 git reset --soft HEAD~1                                                  # Undo last commit, keep files staged
 git reset --hard HEAD~1	                                                 # Deletes last commit + all changes
 git reset --hard	                                                     # Keeps current commit, discards uncommitted changes
 
-git checkout -- <file>                                                   # Discard changes in a file
-git checkout <commit-id> -- <filename>                                   # Replaces your current working version of <filename> with the version from <commit-id>. 
-                                                                           & Doesn’t change your branch or history — just the file content.
-git checkout [master/branch] -- <fileName>                               # Come back to latest commited files
+git rebase <branch>                                                      # Replay commits of current branch on top of <branch>
 
 git revert <commit-id>                                                   # Create new commit to undo a previous one
 
@@ -84,6 +86,7 @@ git log --author="Name"                                                  # Filte
 git log --author="Name" --since="..." --until="..."                      # Combine filters
 
 git diff                                                                 # Show unstaged changes
+git diff <commit1> <commit2>                                             # Show difference beteen these 2 commits
 git show <commit>                                                        # Show details of a specific commit
 git show <commit>:filename                                               # Show details of a specific commit with file name
 
