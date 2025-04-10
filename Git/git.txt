@@ -93,13 +93,19 @@ git show <commit>:filename                                               # Show 
 
 📦 Tagging
 ----------
-git tag                                                                  # List all tags
-git tag <name>                                                           # Create a tag
-git tag -d <name>                                                        # Delete a tag
-git push origin <tag>                                                    # Push a tag to remote
+git tag                                                                  # Show all tags
+git tag v1.0                                                             # Create lightweight tag
+git tag -a v1.0 -m "msg"                                                 # Create annotated tag
+git tag -a v1.0 commitid -m "msg"                                        # Tag a specific commit
+git push origin v1.0                                                     # Push single tag
+git push --tags                                                          # Push all tags
+git tag -d v1.0                                                          # Delete local tag
+git push origin --delete tag v1.0                                        # Delete remote tag
 
 
 🧹 Clean Up
 ------------
-git clean -n                                                             # Show untracked files to be removed
-git clean -f                                                             # Remove untracked files
+git clean -n                                                             # Show what will be deleted (dry run)
+git clean -f                                                             # Delete untracked files
+git clean -fd                                                            # Delete untracked files & directories
+git clean -fx                                                            # Force delete including .gitignored files
