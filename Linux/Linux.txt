@@ -1,0 +1,95 @@
+
+🐧 LINUX COMMAND CHEAT SHEET (With Proper Use Cases)
+
+🔹 FILES & DIRECTORIES
+ls, ls -lAh                                        => List files and directories with details and hidden files.
+cd                                                 => Change directory.
+pwd                                                => Print current working directory.
+mkdir, mkdir -p                                    => Create directory. -p creates parent directories as needed.
+rm, rm -rf                                         => Delete files or directories. Use -rf to delete recursively and forcefully.
+cp, cp -r                                          => Copy files or directories. Use -r for recursive copy.
+mv                                                 => Move or rename files or directories.
+touch                                              => Create empty file or update timestamp.
+stat                                               => Show detailed file info.
+
+🔹 VIEWING & PROCESSING TEXT FILES
+cat                                                => Show file content.
+less, more                                         => View content one page at a time.
+head -n N, tail -n N                               => Show first/last N lines.
+tail -f                                            => Monitor file changes in real-time.
+cut -d':' -f1                                      => Extract fields from lines.
+sort, uniq                                         => Sort lines and remove duplicates.
+wc -l                                              => Count lines in a file.
+diff, cmp                                          => Compare files.
+tr                                                 => Translate/replace characters.
+
+🔹 SEARCHING FILES OR CONTENT
+find /path -name "*.sh"                            => Find files by name in directory tree.
+locate                                             => Fast file finding using DB.
+grep, grep -r, -i                                  => Search for pattern in file(s).
+xargs                                              => Convert input into arguments.
+which, whereis                                     => Find path of a binary.
+file                                               => Determine file type.
+
+🔹 PERMISSIONS & OWNERSHIP
+chmod 755                                          => Change file permissions.
+chown user:group                                   => Change file ownership.
+chgrp                                              => Change group ownership.
+umask                                              => Set default permission for new files.
+
+🔹 USER MANAGEMENT
+adduser john                                       => Add a user.
+passwd john                                        => Set/change password.
+usermod -aG sudo john                              => Add user to group.
+id, groups, whoami                                 => View user/group info.
+deluser john                                       => Delete a user.
+last, w, who                                       => Show login and session info.
+
+🔹 PROCESS & JOB MANAGEMENT
+ps aux, top, htop                                  => Show running processes.
+kill PID, killall name                             => Terminate processes.
+nice, renice                                       => Set process priority.
+jobs, fg, bg                                       => Manage background jobs.
+
+🔹 NETWORKING
+ip a, ifconfig                                     => Show network interfaces.
+ping, traceroute                                   => Test network connection.
+ss -tuln, netstat -tuln                            => View listening ports.
+curl, wget                                         => Make web requests/download files.
+telnet, nc                                         => Check port or TCP connection.
+dig, nslookup                                      => DNS queries.
+
+🔹 SYSTEM INFO & RESOURCE MONITORING
+df -h                                              => Disk usage.
+du -sh folder/                                     => Directory size.
+free -h                                            => Memory usage.
+uptime                                             => System uptime.
+vmstat, iostat                                     => CPU, IO stats.
+lsblk, blkid                                       => Block device info.
+
+🔹 ARCHIVING & COMPRESSION
+tar -czf file.tar.gz                               => Create archive.
+tar -xzf file.tar.gz                               => Extract archive.
+zip -r archive.zip                                 => Zip folder.
+unzip archive.zip                                  => Extract zip file.
+gzip, gunzip                                       => Compress/decompress files.
+
+🔹 SERVICES (Systemd)
+systemctl start nginx                              => Start a service.
+systemctl stop nginx                               => Stop a service.
+systemctl status nginx                             => Check service status.
+systemctl enable nginx                             => Enable service on boot.
+journalctl -u nginx                                => View service logs.
+
+🔹 CRON JOBS
+crontab -e                                         => Edit user's cron jobs.
+crontab -l                                         => List user's cron jobs.
+
+🔹 MISC COMMANDS
+date, cal                                          => Date/calendar info.
+hostname                                           => Show/set hostname.
+history                                            => Show command history.
+alias, unalias                                     => Shortcut commands.
+env, printenv                                      => Show environment variables.
+echo $VAR                                          => Print variable.
+exit, logout, shutdown, reboot                     => Exit/reboot/shutdown system.
