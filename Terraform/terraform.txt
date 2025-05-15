@@ -1,0 +1,95 @@
+
+Terraform Cheat Sheet - Simple Definitions
+------------------------------------------
+
+1. What is Terraform?
+> Terraform is an open-source tool that helps you manage infrastructure using code (Infrastructure as Code - IaC).
+
+2. Why Terraform?
+> Automates infrastructure creation, repeatable, version-controlled, and supports multi-cloud.
+
+3. Infrastructure as Code (IaC)
+> Writing infrastructure setup in code instead of doing it manually.
+
+4. Providers
+> Plugins that let Terraform interact with cloud services like AWS, Azure, GCP.
+
+5. Resources
+> The actual components you create – like servers, networks, databases.
+
+6. Variables
+> Placeholders used to make the configuration dynamic and reusable.
+
+7. Outputs
+> Used to display useful info after deployment (e.g., IP addresses, URLs).
+
+8. Data Sources
+> Lets you fetch data from existing resources without creating them.
+
+9. Modules
+> Reusable groups of Terraform files (like functions in code).
+
+10. State
+> Stores info about your infrastructure so Terraform knows what to change.
+
+11. Backend
+> Decides where Terraform stores the state (local file or remote like S3).
+
+12. Workspaces
+> Used to manage multiple environments (like dev, staging, prod) with the same config.
+
+13. Terraform Files
+- .tf – main Terraform config file
+- .tfstate – stores the current state
+- .tfvars – stores variable values
+
+14. Basic Terraform Commands
+- terraform init        -> Initialize the setup
+- terraform plan        -> Show what will be created/changed
+- terraform apply       -> Create or update infrastructure
+- terraform destroy     -> Delete infrastructure
+- terraform validate    -> Check syntax is correct
+- terraform fmt         -> Format code
+- terraform output      -> Show outputs
+- terraform import      -> Bring existing resource under Terraform
+
+15. Variable Types
+- string – plain text
+- number – numeric value
+- bool – true/false
+- list – a group of values
+- map – key-value pairs
+
+16. Loops & Conditionals
+- count – repeat resource multiple times
+- for_each – create resource for each item in a list/map
+- for – loop in expressions
+- if – apply conditionally
+
+17. Lifecycle Rules
+- prevent_destroy – stop accidental deletion
+- create_before_destroy – replace safely
+- ignore_changes – ignore specific field changes
+
+18. Provisioners
+> Run commands (like scripts) after creating resources.
+
+19. State Management
+> Terraform uses .tfstate file to track resources. Remote state keeps it safe & shared.
+
+20. Remote Backend (Example: AWS S3)
+backend "s3" {
+  bucket = "my-tf-state"
+  key    = "dev/terraform.tfstate"
+  region = "us-east-1"
+}
+
+21. Terraform Cloud (Optional)
+> Hosted Terraform with team collaboration, state management, policies.
+
+22. Best Practices
+- Use version control (Git)
+- Store state remotely
+- Don’t hardcode secrets
+- Use modules for DRY code
+- Lock provider versions

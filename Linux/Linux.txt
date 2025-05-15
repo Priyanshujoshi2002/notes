@@ -86,7 +86,7 @@ crontab -e                                         => Edit user's cron jobs.
 crontab -l                                         => List user's cron jobs.
 
 🔹 MISC COMMANDS
-date, cal                                          => Date/calendar info.
+date, cal, date +%D or %T or +%H:%M                => Date/calendar info.
 hostname                                           => Show/set hostname.
 history                                            => Show command history.
 alias, unalias                                     => Shortcut commands.
