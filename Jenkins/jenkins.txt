@@ -1,0 +1,2 @@
+Insall jenkins from doc (First install java and then instal jenkins)
+Check all things are installed correctly and also needs to check security group.
