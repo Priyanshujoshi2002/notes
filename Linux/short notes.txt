@@ -1,0 +1,267 @@
+🖥️ Server
+- A system that provides services (like websites, files, data)
+- Always running, waiting for client requests
+- Example: Web server, database server
+
+💻 Client
+- A system that requests services from a server
+- Sends requests and receives responses
+- Example: Web browser, mobile app
+
+📌 Client-Server Model is the core of networking:
+Client requests → Server responds
+
+
+Here’s a simple and short difference between Linux and Windows:
+
+| Feature           | Linux                                | Windows                                 |
+| ----------------- | ------------------------------------ | --------------------------------------- |
+| **Source**        | Open-source (free to use and modify) | Closed-source (licensed by Microsoft)   |
+| **Cost**          | Mostly free                          | Paid (some versions are free)           |
+| **Security**      | More secure (fewer viruses)          | More prone to malware and viruses       |
+| **Customization** | Highly customizable                  | Limited customization                   |
+| **Command Line**  | Strong CLI support (bash/shell)      | CMD/PowerShell (less used by beginners) |
+| **Usage**         | Preferred for servers and DevOps     | Preferred for desktops and gaming       |
+
+| Feature                | **Linux**                                                    | **Windows**                                |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| **Preferred for**      | Servers, DevOps, cloud deployments                           | Desktop apps, some enterprise servers      |
+| **Performance**        | Lightweight, better for running servers                      | Heavier, consumes more resources           |
+| **Package Managers**   | Uses tools like `apt`, `yum` for automation                  | No built-in package manager like Linux     |
+| **Scripting**          | Bash scripting (widely used in DevOps)                       | PowerShell (less common in DevOps)         |
+| **Tool Compatibility** | Works seamlessly with tools like Docker, Ansible, Kubernetes | Some tools have limited or complex support |
+| **SSH Support**        | Native, easy to set up and use                               | Needs setup, not as smooth as Linux        |
+| **File System**        | Case-sensitive (`/var/log` ≠ `/VAR/LOG`)                     | Case-insensitive                           |
+
+
+Here’s a simple and short difference between Unix and Linux:
+| Feature          | **Unix**                      | **Linux**                                |
+| ---------------- | ----------------------------- | ---------------------------------------- |
+| **Source**       | Closed-source (mostly)        | Open-source (free to use & modify)       |
+| **Cost**         | Commercial (paid)             | Mostly free                              |
+| **Developed By** | AT\&T in the 1970s            | Linus Torvalds in 1991                   |
+| **Usage**        | Mainly in servers, mainframes | Used in servers, desktops, cloud, DevOps |
+| **Examples**     | AIX, HP-UX, Solaris           | Ubuntu, CentOS, Red Hat, Debian          |
+| **Support**      | Vendor-dependent              | Community + Vendor support               |
+
+📌 Linux is Unix-like and was created as a free alternative to Unix.
+
+
+Here’s a simple and short explanation of Kernel, Bootloader, and Shell—important terms in Linux and DevOps:
+
+🧠 Kernel
+- Core of the OS.
+- Manages hardware and system resources (CPU, memory, devices).
+- Acts as a bridge between hardware and software.
+Think of it as the brain of the OS.
+
+💻 Shell
+- Interface between the user and the kernel.
+- Takes commands from the user and executes them.
+- Types: Bash, Zsh, Sh
+It’s like your command-line assistant.
+
+🥾 Bootloader
+- Program that loads the OS into memory when the system starts.
+- Runs before the OS.
+- Examples: GRUB, LILO
+It’s the first thing that runs when you start your computer.
+
+
+
+📁 Linux File System Structure (Hierarchy)
+Everything starts from root / and branches like a tree.
+
+| Directory          | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| `/`                | Root directory (top of the file system)         |
+| `/bin`             | Essential binary commands (e.g., `ls`, `cp`)    |
+| `/boot`            | Bootloader files (e.g., `vmlinuz`, `grub`)      |
+| `/etc`             | Configuration files for system and applications |
+| `/home`            | User directories (e.g., `/home/priyanshu`)      |
+| `/var`             | Variable data (logs, mail, cache, etc.)         |
+| `/tmp`             | Temporary files (auto-deleted)                  |
+| `/usr`             | User-installed apps and libraries               |
+| `/root`            | Root user’s home directory                      |
+| `/dev`             | Device files (e.g., hard drives, USBs)          |
+| `/proc`            | Virtual files for system and process info       |
+| `/lib`             | Essential shared libraries                      |
+| `/sbin`            | System admin binaries (`reboot`, `shutdown`)    |
+| `/media` or `/mnt` | Mounted devices (USBs, drives)                  |
+
+
+
+⚙️ Here’s a short and easy explanation of the States of Processes in Linux (important for DevOps interviews):
+
+| State Code | Name                         | Description                                                 |
+| ---------- | ---------------------------- | ----------------------------------------------------------- |
+| **R**      | **Running** / Runnable       | Process is either running or ready to run (in CPU queue).   |
+| **S**      | **Sleeping** (Interruptible) | Waiting for an event (e.g., input/output). Can be woken up. |
+| **D**      | **Uninterruptible Sleep**    | Waiting for I/O (e.g., disk). Cannot be interrupted.        |
+| **T**      | **Stopped** / Traced         | Process is stopped (e.g., via `Ctrl+Z`) or being debugged.  |
+| **Z**      | **Zombie**                   | Process finished but not cleaned up by parent.              |
+| **X**      | **Dead**                     | Process is terminated (rarely shown).                       |
+
+📌 Use ps aux or top to check process states in real time.
+
+------------------------------------------------------------------------------------------------------------------------
+
+✅ Basic Linux Questions
+
+1. What is Linux?
+A free, open-source operating system based on UNIX. It’s widely used in servers, DevOps, cloud, and containers.
+
+2. What is the Linux Kernel?
+The core part of Linux OS that manages hardware and system processes.
+
+3. What is the difference between Linux and Unix?
+Linux: Open-source, widely used, community-supported.
+Unix: Mostly proprietary, vendor-supported (e.g., Solaris, AIX).
+
+4. What are a Kernel, Shell, and Bootloader?
+Kernel: Core system managing hardware.
+Shell: Interface between user and kernel (e.g., bash).
+Bootloader: Loads the OS into memory at startup.
+
+
+📁 Linux File System
+
+5. Explain Linux File System Hierarchy
+
+/: Root directory
+/home: User files
+/etc: Config files
+/bin: Essential commands
+/var: Logs
+/tmp: Temporary files
+/usr: User applications
+
+6. What is the difference between absolute and relative path?
+Absolute: Full path from root (e.g., /home/user/file.txt)
+Relative: Path from current location (e.g., ../folder/file.txt)
+
+
+🔐 Permissions & Ownership
+
+7. How do Linux file permissions work?
+Format: rwxr-xr-- (owner/group/others)
+r: read, w: write, x: execute
+
+8. How to change permissions and ownership?
+
+chmod 755 file              # Change permission
+chown user:group file       # Change owner
+
+📄 File Handling
+
+9. Common file commands:
+ls, cd, cp, mv, rm, mkdir, touch, cat, less, head, tail, find, locate
+
+10. How to search files or content inside files?
+find /path -name "file.txt"  
+grep "text" file.txt  
+
+
+🧠 Process Management
+
+11. Process States in Linux:
+R: Running
+S: Sleeping
+D: Uninterruptible sleep
+T: Stopped
+Z: Zombie
+
+12. How to manage processes?
+ps aux, top, htop  
+kill PID  
+nice/renice  
+
+Q - What is nice/renice?  
+The nice command can be issued to start a process with a priority level you specify, while renice modifies the priority of a process that is already running.
+
+📋 User Management
+
+13. Create, modify, delete users:
+adduser user  
+passwd user  
+deluser user  
+usermod -aG sudo user  
+
+🔐 User Permissions & Ownership
+
+
+
+
+
+🌐 Networking
+14. Basic networking commands:
+ip a, ifconfig, ping, traceroute, netstat, ss, curl, wget, nslookup
+
+🧰 Disk & System Monitoring
+15. Disk & memory commands:
+df -h     # Disk space  
+du -sh *  # Folder sizes  
+free -h   # RAM usage  
+uptime    # System uptime  
+
+💡 Crontab & Scheduling
+
+16. What is Crontab?
+Used to schedule jobs to run at specific times/dates.
+
+17. Common crontab syntax:
+crontab -e          # Edit cron jobs  
+* * * * * command   # min hour day month day_of_week
+
+⚙️ Services & Systemd
+
+18. Common systemctl commands:
+systemctl start|stop|restart|status service  
+systemctl enable service    # Auto-start on boot  
+
+🧱 Package Management
+
+19. Debian/Ubuntu:
+sudo apt update  
+sudo apt install nginx  
+
+20. RHEL/CentOS:
+sudo yum install nginx  
+
+✨ Important Editors
+
+21. Vim / Nano
+vim file.txt       # Open file in Vim  
+nano file.txt      # Open file in Nano
+
+🔐 SSH & File Transfer
+
+22. SSH & SCP:
+ssh user@host  
+scp file user@host:/path  
+
+🐳 Linux in DevOps Tools Context
+23. Docker Commands:
+docker ps, docker images, docker exec -it, docker run, docker logs
+
+24. Kubernetes Commands:
+kubectl get pods, kubectl describe pod, kubectl logs podname
+
+25. Ansible/Terraform/Jenkins:
+ansible-playbook play.yml  
+terraform init / apply / destroy  
+jenkins-cli.jar -s http://url command
+
+🔎 Log Management
+
+26. Where are logs stored in Linux?
+Most system logs are in /var/log/
+cd /var/log  
+tail -f syslog  
+tail -f /var/log/nginx/access.log  
+
+🔐 SELinux/AppArmor
+
+27. What is SELinux?
+A security module that enforces access control policies.
+

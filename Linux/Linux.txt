@@ -1,114 +1,3 @@
-🖥️ Server
-- A system that provides services (like websites, files, data)
-- Always running, waiting for client requests
-- Example: Web server, database server
-
-💻 Client
-- A system that requests services from a server
-- Sends requests and receives responses
-- Example: Web browser, mobile app
-
-📌 Client-Server Model is the core of networking:
-Client requests → Server responds
-
-
-
-
-Here’s a simple and short difference between Linux and Windows:
-
-| Feature           | Linux                                | Windows                                 |
-| ----------------- | ------------------------------------ | --------------------------------------- |
-| **Source**        | Open-source (free to use and modify) | Closed-source (licensed by Microsoft)   |
-| **Cost**          | Mostly free                          | Paid (some versions are free)           |
-| **Security**      | More secure (fewer viruses)          | More prone to malware and viruses       |
-| **Customization** | Highly customizable                  | Limited customization                   |
-| **Command Line**  | Strong CLI support (bash/shell)      | CMD/PowerShell (less used by beginners) |
-| **Usage**         | Preferred for servers and DevOps     | Preferred for desktops and gaming       |
-
-| Feature                | **Linux**                                                    | **Windows**                                |
-| ---------------------- | ------------------------------------------------------------ | ------------------------------------------ |
-| **Preferred for**      | Servers, DevOps, cloud deployments                           | Desktop apps, some enterprise servers      |
-| **Performance**        | Lightweight, better for running servers                      | Heavier, consumes more resources           |
-| **Package Managers**   | Uses tools like `apt`, `yum` for automation                  | No built-in package manager like Linux     |
-| **Scripting**          | Bash scripting (widely used in DevOps)                       | PowerShell (less common in DevOps)         |
-| **Tool Compatibility** | Works seamlessly with tools like Docker, Ansible, Kubernetes | Some tools have limited or complex support |
-| **SSH Support**        | Native, easy to set up and use                               | Needs setup, not as smooth as Linux        |
-| **File System**        | Case-sensitive (`/var/log` ≠ `/VAR/LOG`)                     | Case-insensitive                           |
-
-
-Here’s a simple and short difference between Unix and Linux:
-| Feature          | **Unix**                      | **Linux**                                |
-| ---------------- | ----------------------------- | ---------------------------------------- |
-| **Source**       | Closed-source (mostly)        | Open-source (free to use & modify)       |
-| **Cost**         | Commercial (paid)             | Mostly free                              |
-| **Developed By** | AT\&T in the 1970s            | Linus Torvalds in 1991                   |
-| **Usage**        | Mainly in servers, mainframes | Used in servers, desktops, cloud, DevOps |
-| **Examples**     | AIX, HP-UX, Solaris           | Ubuntu, CentOS, Red Hat, Debian          |
-| **Support**      | Vendor-dependent              | Community + Vendor support               |
-
-📌 Linux is Unix-like and was created as a free alternative to Unix.
-
-
-Here’s a simple and short explanation of Kernel, Bootloader, and Shell—important terms in Linux and DevOps:
-
-🧠 Kernel
-- Core of the OS.
-- Manages hardware and system resources (CPU, memory, devices).
-- Acts as a bridge between hardware and software.
-Think of it as the brain of the OS.
-
-💻 Shell
-- Interface between the user and the kernel.
-- Takes commands from the user and executes them.
-- Types: Bash, Zsh, Sh
-It’s like your command-line assistant.
-
-🥾 Bootloader
-- Program that loads the OS into memory when the system starts.
-- Runs before the OS.
-- Examples: GRUB, LILO
-It’s the first thing that runs when you start your computer.
-
-
-
-📁 Linux File System Structure (Hierarchy)
-Everything starts from root / and branches like a tree.
-
-| Directory          | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `/`                | Root directory (top of the file system)         |
-| `/bin`             | Essential binary commands (e.g., `ls`, `cp`)    |
-| `/boot`            | Bootloader files (e.g., `vmlinuz`, `grub`)      |
-| `/etc`             | Configuration files for system and applications |
-| `/home`            | User directories (e.g., `/home/priyanshu`)      |
-| `/var`             | Variable data (logs, mail, cache, etc.)         |
-| `/tmp`             | Temporary files (auto-deleted)                  |
-| `/usr`             | User-installed apps and libraries               |
-| `/root`            | Root user’s home directory                      |
-| `/dev`             | Device files (e.g., hard drives, USBs)          |
-| `/proc`            | Virtual files for system and process info       |
-| `/lib`             | Essential shared libraries                      |
-| `/sbin`            | System admin binaries (`reboot`, `shutdown`)    |
-| `/media` or `/mnt` | Mounted devices (USBs, drives)                  |
-
-
-
-⚙️ Here’s a short and easy explanation of the States of Processes in Linux (important for DevOps interviews):
-
-| State Code | Name                         | Description                                                 |
-| ---------- | ---------------------------- | ----------------------------------------------------------- |
-| **R**      | **Running** / Runnable       | Process is either running or ready to run (in CPU queue).   |
-| **S**      | **Sleeping** (Interruptible) | Waiting for an event (e.g., input/output). Can be woken up. |
-| **D**      | **Uninterruptible Sleep**    | Waiting for I/O (e.g., disk). Cannot be interrupted.        |
-| **T**      | **Stopped** / Traced         | Process is stopped (e.g., via `Ctrl+Z`) or being debugged.  |
-| **Z**      | **Zombie**                   | Process finished but not cleaned up by parent.              |
-| **X**      | **Dead**                     | Process is terminated (rarely shown).                       |
-
-📌 Use ps aux or top to check process states in real time.
-
-
-
-
 🐧 LINUX COMMAND CHEAT SHEET (With Proper Use Cases)
 
 🔹 FILES & DIRECTORIES
@@ -132,6 +21,40 @@ sort, uniq                                         => Sort lines and remove dupl
 wc -l                                              => Count lines in a file.
 diff, cmp                                          => Compare files.
 tr                                                 => Translate/replace characters.
+
+📝 Text Editors
+
+1. vi / vim (Powerful Terminal Editor)
+
+vi file.txt        # Open file in vi
+vim file.txt       # Open in vim (advanced vi)
+
+| Mode              | Command         | Description                  |
+| ----------------- | --------------- | ---------------------------- |
+| Command Mode      | `i`             | Enter Insert mode            |
+| Insert Mode       | `Esc`           | Exit to Command mode         |
+| Save/Quit         | `:w`            | Save file                    |
+| Save & Exit       | `:wq` or `ZZ`   | Save and quit                |
+| Quit without save | `:q!`           | Quit without saving          |
+| Delete line       | `dd`            | Delete current line          |
+| Copy line         | `yy`            | Copy current line            |
+| Paste             | `p`             | Paste copied/deleted text    |
+| Search            | `/word`         | Search for "word"            |
+| Replace           | `:%s/old/new/g` | Replace all "old" with "new" |
+
+
+2. nano (Beginner-friendly Editor)
+
+nano file.txt
+
+| Command    | Description |
+| ---------- | ----------- |
+| `Ctrl + O` | Save file   |
+| `Ctrl + X` | Exit nano   |
+| `Ctrl + K` | Cut line    |
+| `Ctrl + U` | Paste line  |
+| `Ctrl + W` | Search text |
+
 
 🔹 SEARCHING FILES OR CONTENT
 find /path -name "*.sh"                            => Find files by name in directory tree.
@@ -174,7 +97,7 @@ df -h                                              => Disk usage.
 du -sh folder/                                     => Directory size.
 free -h                                            => Memory usage.
 uptime                                             => System uptime.
-vmstat, iostat                                     => CPU, IO stats.
+vmstat, iostat                                     => CPU, IO stats/ Ram usage.
 lsblk, blkid                                       => Block device info.
 
 🔹 ARCHIVING & COMPRESSION
