@@ -105,163 +105,104 @@ Everything starts from root / and branches like a tree.
 📌 Use ps aux or top to check process states in real time.
 
 ------------------------------------------------------------------------------------------------------------------------
-
-✅ Basic Linux Questions
-
 1. What is Linux?
-A free, open-source operating system based on UNIX. It’s widely used in servers, DevOps, cloud, and containers.
+Linux is an open-source operating system kernel that serves as the foundation for many different distributions, known as Linux distributions or simply Linux distros.
 
-2. What is the Linux Kernel?
-The core part of Linux OS that manages hardware and system processes.
+2. What are the flavors of Linux?
+Ubuntu, CentOS, Suse, RedHat, Debian.
 
-3. What is the difference between Linux and Unix?
-Linux: Open-source, widely used, community-supported.
-Unix: Mostly proprietary, vendor-supported (e.g., Solaris, AIX).
+3. What is the difference between UNIX and Linux?
+UNIX is an older operating system that served as the inspiration for Linux. Linux is a Unix-like operating system that was developed independently but shares many similarities with UNIX.
 
-4. What are a Kernel, Shell, and Bootloader?
-Kernel: Core system managing hardware.
-Shell: Interface between user and kernel (e.g., bash).
-Bootloader: Loads the OS into memory at startup.
+4. What is the difference between a process and a thread in Linux?
+A process is an instance of a program that is running on a system, while a thread is a lightweight process that shares the resources of a process.
 
+5. What is the difference between a hard link and a soft link in Linux?
+A hard link is a link to a file that points to the same inode as the original file, while a soft link (also known as a symbolic link) is a link to a file that points to the file’s path.
 
-📁 Linux File System
+6. What is a shell in Linux?
+The shell is a command-line interpreter that allows users to interact with the operating system. It provides a way to execute commands and run programs.
 
-5. Explain Linux File System Hierarchy
+7. What is a process in Linux?
+A process is an instance of a running program. It represents the execution of a program in memory and includes information such as the program’s code, data, and resources.
 
-/: Root directory
-/home: User files
-/etc: Config files
-/bin: Essential commands
-/var: Logs
-/tmp: Temporary files
-/usr: User applications
+8. How can you check the memory usage of a Linux system?
+The “free” command displays information about the system’s memory usage, including total memory, used memory, free memory, and swap usage.
 
-6. What is the difference between absolute and relative path?
-Absolute: Full path from root (e.g., /home/user/file.txt)
-Relative: Path from current location (e.g., ../folder/file.txt)
+9. How do you find the IP address of a Linux system?
+The “ifconfig” command displays network interface information, including IP addresses assigned to the system.
 
+10. How do you find the list of running processes in Linux?
+The “ps” command can be used to display a list of running processes. Adding options like “-ef” or “-aux” provides more detailed information.
 
-🔐 Permissions & Ownership
+11. How do you kill a process in Linux?
+The “kill” command is used to terminate a process. It requires the process ID (PID) of the process to be killed. The PID can be obtained using the “ps” command.
 
-7. How do Linux file permissions work?
-Format: rwxr-xr-- (owner/group/others)
-r: read, w: write, x: execute
+12. What is the purpose of the “chmod” command in Linux?
+The “chmod” command is used to change the permissions of files and directories in Linux. It can be used to grant or revoke read, write, and execute permissions.
 
-8. How to change permissions and ownership?
+13. How do you search for a file in Linux?
+The “find” command allows you to search for files based on various criteria, such as name, size, or modification time. For example, “find / -name myfile.txt” searches for a file named “myfile.txt” starting from the root directory.
 
-chmod 755 file              # Change permission
-chown user:group file       # Change owner
+14. What is SSH?
+SSH (Secure Shell) is a network protocol that provides a secure way to access and manage remote systems. It allows encrypted communication between a client and a server.
 
-📄 File Handling
+15. How do you connect to a remote Linux server using SSH?
+You can connect to a remote Linux server using SSH by running the command “ssh username@hostname” in a terminal. Replace “username” with your username and “hostname” with the server’s IP address or domain name.
 
-9. Common file commands:
-ls, cd, cp, mv, rm, mkdir, touch, cat, less, head, tail, find, locate
+16. What is the purpose of the “grep” command?
+The “grep” command is used to search for specific patterns within files. It is commonly used for text searching and pattern matching.
 
-10. How to search files or content inside files?
-find /path -name "file.txt"  
-grep "text" file.txt  
+17. How do you check the disk usage in Linux?
+The “df” command displays information about disk space usage on file systems. Adding the “-h” option provides human-readable output.
 
+18. How can you compress and decompress files in Linux?
+The “gzip” command is used to compress files, creating a “.gz” file. To decompress a compressed file, you can use the “gunzip” command.
 
-🧠 Process Management
+19. How do you check the disk space usage of a specific directory in Linux?
+The “du” command is used to estimate the disk space usage of a directory and its subdirectories. Adding the “-h” option provides a more readable output.
 
-11. Process States in Linux:
-R: Running
-S: Sleeping
-D: Uninterruptible sleep
-T: Stopped
-Z: Zombie
+20. How do you monitor system performance in Linux?
+The “top” command is commonly used to monitor system performance in real-time. It displays information about CPU usage, memory usage, running processes, and more.
 
-12. How to manage processes?
-ps aux, top, htop  
-kill PID  
-nice/renice  
+21. What is a package manager in Linux?
+A package manager is a tool used to manage software packages in a Linux distribution. It handles package installation, updates, and removal. Examples of package managers are “apt” for Debian-based distributions and “yum” for Red Hat-based distributions.
 
-Q - What is nice/renice?  
-The nice command can be issued to start a process with a priority level you specify, while renice modifies the priority of a process that is already running.
+22. How do you install software in Linux?
+The method of installing software in Linux depends on the distribution. For Debian-based distributions like Ubuntu, you can use the “apt” or “apt-get” command. For Red Hat-based distributions like CentOS, you can use the “yum” or “dnf” command.
 
-📋 User Management
+23. How do you add a user in Linux?
+The “useradd” command is used to add a user in Linux. For example, “useradd username” creates a new user with the username specified.
 
-13. Create, modify, delete users:
-adduser user  
-passwd user  
-deluser user  
-usermod -aG sudo user  
+24. How do you change the password for a user in Linux?
+The “passwd” command is used to change the password for a user in Linux. Running “passwd username” prompts you to enter a new password for the specified user.
 
-🔐 User Permissions & Ownership
+25. What is the purpose of the “cron” daemon in Linux?
+The “cron” daemon is a time-based job scheduler in Linux. It allows users to schedule and automate the execution of commands or scripts at specified intervals or times.
 
+26. How do you schedule a cron job in Linux?
+To schedule a cron job, you can use the “crontab” command. Running “crontab -e” opens the user’s crontab file, where you can specify the command or script to be executed and the schedule.
 
+27. What is the difference between SSH and SSL?
+SSH (Secure Shell) is a network protocol used for secure remote access and management of systems. SSL (Secure Sockets Layer) is a security protocol used to establish secure encrypted connections between clients and servers, commonly used for secure web communication (HTTPS).
 
+28. How do you check the network connectivity in Linux?
+The “ping” command is used to check network connectivity between your machine and a remote host. Running “ping hostname” sends ICMP echo requests to the specified hostname or IP address and displays the response time.
 
+29. What is a firewall in Linux?
+A firewall is a network security tool that filters incoming and outgoing network traffic based on predefined rules. It helps protect systems from unauthorized access and network-based attacks.
 
-🌐 Networking
-14. Basic networking commands:
-ip a, ifconfig, ping, traceroute, netstat, ss, curl, wget, nslookup
+30. What is a RAID in Linux?
+RAID (Redundant Array of Independent Disks) is a technology used to combine multiple physical disk drives into a single logical unit. It provides improved performance, data redundancy, or a combination of both, depending on the RAID level used.
 
-🧰 Disk & System Monitoring
-15. Disk & memory commands:
-df -h     # Disk space  
-du -sh *  # Folder sizes  
-free -h   # RAM usage  
-uptime    # System uptime  
+31. How do you create a partition in Linux?
+The “fdisk” command is commonly used to create partitions in Linux.
 
-💡 Crontab & Scheduling
-
-16. What is Crontab?
-Used to schedule jobs to run at specific times/dates.
-
-17. Common crontab syntax:
-crontab -e          # Edit cron jobs  
-* * * * * command   # min hour day month day_of_week
-
-⚙️ Services & Systemd
-
-18. Common systemctl commands:
-systemctl start|stop|restart|status service  
-systemctl enable service    # Auto-start on boot  
-
-🧱 Package Management
-
-19. Debian/Ubuntu:
-sudo apt update  
-sudo apt install nginx  
-
-20. RHEL/CentOS:
-sudo yum install nginx  
-
-✨ Important Editors
-
-21. Vim / Nano
-vim file.txt       # Open file in Vim  
-nano file.txt      # Open file in Nano
-
-🔐 SSH & File Transfer
-
-22. SSH & SCP:
-ssh user@host  
-scp file user@host:/path  
-
-🐳 Linux in DevOps Tools Context
-23. Docker Commands:
-docker ps, docker images, docker exec -it, docker run, docker logs
-
-24. Kubernetes Commands:
-kubectl get pods, kubectl describe pod, kubectl logs podname
-
-25. Ansible/Terraform/Jenkins:
-ansible-playbook play.yml  
-terraform init / apply / destroy  
-jenkins-cli.jar -s http://url command
-
-🔎 Log Management
-
-26. Where are logs stored in Linux?
-Most system logs are in /var/log/
-cd /var/log  
-tail -f syslog  
-tail -f /var/log/nginx/access.log  
-
-🔐 SELinux/AppArmor
-
-27. What is SELinux?
-A security module that enforces access control policies.
-
+32. What are some common tools used for automated testing in a Linux DevOps environment?
+Automated testing in a Linux DevOps environment involves tools that help run tests quickly and consistently. Common tools include:
+JUnit: A testing framework for unit testing Java applications.
+Selenium: A testing framework that enables testing of web applications across different browsers.
+Jenkins: An automation server used to build, test, and deploy code.
+Travis CI: A cloud-based continuous integration service that automates testing.
+GitLab CI: A platform used for the continuous integration and delivery of code.
+These tools streamline the testing process, save time, and ensure that the code meets quality standards.
