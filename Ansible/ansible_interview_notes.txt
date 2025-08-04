@@ -1,0 +1,155 @@
+
+Ansible Complete Interview Preparation Notes
+===========================================
+
+STEP 1: Ansible Basics
+----------------------
+- Ansible is an open-source configuration management and automation tool.
+- It is agentless, uses SSH (or WinRM for Windows), and is written in Python.
+- Control Node: Where Ansible is installed.
+- Managed Nodes: The target machines to configure.
+- Inventory File: Lists hosts and groups of hosts.
+
+STEP 2: Installation & Setup
+----------------------------
+- Install via: `sudo apt install ansible` or `pip install ansible`
+- Verify with: `ansible --version`
+- Configure SSH keys for passwordless login between control and managed nodes.
+- Default inventory file: /etc/ansible/hosts
+
+STEP 3: Ad-Hoc Commands
+-----------------------
+- Run single tasks quickly without writing a playbook.
+Examples:
+- `ansible all -m ping`
+- `ansible webservers -m shell -a "uptime"`
+Useful modules: `ping`, `command`, `shell`, `copy`, `file`, `yum`, `apt`, `service`
+
+STEP 4: Playbooks
+-----------------
+- Written in YAML, describing desired system state.
+- Components:
+  - `hosts`: Target machines
+  - `tasks`: List of actions
+  - `become`: Privilege escalation
+  - `handlers`: Triggered only when notified
+  - `vars`: Define variables
+
+STEP 5: Common Modules
+----------------------
+- `command`, `shell`: Run commands
+- `file`: Set file attributes
+- `copy`, `template`: Transfer files/templates
+- `yum`, `apt`, `package`: Install packages
+- `user`, `group`: Manage users/groups
+- `cron`: Schedule jobs
+- `service`, `systemd`: Manage services
+- `git`, `unarchive`, `get_url`: Code and archive handling
+
+STEP 6: Variables and Facts
+---------------------------
+- Define variables in playbooks, inventory, host_vars, or group_vars.
+- Register outputs using `register` keyword.
+- Access system facts using `ansible_facts`.
+- Conditional execution using `when`.
+
+STEP 7: Loops and Conditionals
+------------------------------
+- Loop with `loop`, `with_items`, `with_dict`
+- Example:
+  ```
+  - name: Install packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - nginx
+      - git
+  ```
+- Conditional with `when`, loop control with `loop_control`
+
+STEP 8: Roles and Directory Structure
+-------------------------------------
+- Roles are reusable units.
+- Structure (created using `ansible-galaxy init`):
+  ```
+  roles/
+    myrole/
+      tasks/
+      handlers/
+      templates/
+      files/
+      vars/
+      defaults/
+      meta/
+  ```
+- Use roles in playbooks with `roles:` directive.
+
+STEP 9: Templates (Jinja2)
+--------------------------
+- Templates are dynamic files with `.j2` extension.
+- Use variables, loops, conditionals.
+- Rendered with `template` module.
+Example:
+```
+server {
+  listen 80;
+  server_name {{ domain }};
+}
+```
+
+STEP 10: Inventory Management
+-----------------------------
+- Static Inventory: INI or YAML format.
+- Group hosts and define vars per group or host.
+- Dynamic Inventory: Scripts or plugins to pull inventory from cloud providers.
+
+STEP 11: Ansible Vault
+----------------------
+- Secure sensitive data.
+- Encrypt with: `ansible-vault encrypt file.yml`
+- Decrypt with: `ansible-vault decrypt file.yml`
+- Run playbooks with: `ansible-playbook play.yml --ask-vault-pass`
+
+STEP 12: Handlers, Tags, Error Handling
+---------------------------------------
+- Handlers: Run only when notified (e.g., service restart)
+- Tags: Run specific tasks using `--tags`
+- Ignore errors: `ignore_errors: yes`
+- Blocks:
+  - `block`, `rescue`, `always` for try-catch logic
+
+STEP 13: Galaxy and Collections
+-------------------------------
+- Reuse roles from Ansible Galaxy.
+- Install with: `ansible-galaxy install author.rolename`
+- Collections group roles, plugins, modules.
+
+STEP 14: Real-World Use Cases
+-----------------------------
+- LAMP/LEMP stack provisioning
+- Docker/Kubernetes deployment
+- Load balancer setup (Nginx/HAProxy)
+- Jenkins installation and pipeline setup
+- AWS EC2 provisioning
+
+STEP 15: Testing and Best Practices
+-----------------------------------
+- Use `--check` for dry-run
+- `--diff` to show changes
+- `ansible-lint` to ensure best practices
+- Maintain idempotency: same result every time
+
+Advanced Tips:
+--------------
+- Use `set_fact` to define variables at runtime
+- Use `lookup` and `with_` for dynamic values
+- Modularize with roles and use meaningful names
+- Use vaults and dynamic inventories for production
+
+Cloud and CI/CD Integration:
+----------------------------
+- Ansible + AWS CLI or boto for provisioning
+- Use dynamic inventory for EC2
+- Use Ansible in Jenkins pipelines for deployment
+
